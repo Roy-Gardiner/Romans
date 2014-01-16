@@ -2,11 +2,11 @@ require './romans'
 
 
 describe("romans") do 
-  it "should return 1" do
+  it "should return an Arabic number" do
     romanNumerals = File.open('./romanslist.txt','r').readlines
     arabicNumerals = File.open('./arabicslist.txt','r').readlines
-    for i in 4..4 
-      expect(romans(romanNumerals[i].gsub(/\n/,""))).to eq(1)
+    for i in 0..4998
+      expect(romans(romanNumerals[i].gsub(/\n/,""),i+1)).to eq(i+1)
     end  
   end  
 end
